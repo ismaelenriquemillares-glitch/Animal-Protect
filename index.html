@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animal Protect | Jugamos para ayudar</title>
+<style>
+:root{--green:#2d8b67;--mint:#e9f8f0;--yellow:#ffd86b;--brown:#714d3a;--pink:#ff8fa3}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#30463d;background:#fffaf3}
+header{background:linear-gradient(135deg,#dff7e9,#fff1bd);padding:22px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:26px;font-weight:800;color:var(--green)}nav a{margin-left:18px;color:#31584a;text-decoration:none;font-weight:700}
+.hero{padding:70px 7%;text-align:center;background:#fff}
+.hero h1{font-size:clamp(40px,7vw,72px);margin:0 0 15px;color:var(--green)}
+.hero p{font-size:20px;max-width:720px;margin:0 auto 28px;line-height:1.5}
+.btn{display:inline-block;padding:14px 24px;border-radius:30px;background:var(--green);color:white;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+section{padding:55px 7%}.section-title{text-align:center;font-size:34px;color:var(--brown);margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1000px;margin:auto}
+.card{background:white;border-radius:24px;padding:25px;box-shadow:0 8px 30px #00000010;text-align:center}
+.game{min-height:370px;border-radius:20px;padding:22px;background:var(--mint);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.pet{font-size:105px;transition:.2s}.food{font-size:45px;cursor:pointer;margin:7px;padding:8px;border-radius:15px;background:white;border:2px solid #d9eee3}
+.bath{width:260px;height:170px;border-radius:50%;background:#bde8ff;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.soap{font-size:40px;cursor:pointer;margin:8px;padding:10px;border:0;border-radius:15px;background:white}
+.progress{height:12px;width:80%;max-width:360px;background:#ddd;border-radius:20px;overflow:hidden;margin:15px}.bar{height:100%;width:0;background:var(--green);transition:.3s}
+.message{display:none;margin-top:18px;padding:18px;border-radius:18px;background:#fff1bd;font-weight:800;color:#684b23}
+.donate{background:linear-gradient(135deg,#fff0b8,#dff7e9);text-align:center}.donate h2{font-size:38px;color:var(--green)}
+footer{text-align:center;padding:30px;background:#27483d;color:white}
+.small{font-size:14px;color:#63766e}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">🐾 Animal Protect</div>
+<nav><a href="#juegos">Juegos</a><a href="#mision">Nuestra misión</a><a href="#donar">Dona</a></nav>
+</header>
+
+<main>
+<section class="hero">
+<h1>Pequeños cuidados,<br>grandes cambios. 🐶💚</h1>
+<p>Aprende jugando que alimentar, cuidar y proteger a una mascota puede ayudar a construir un mundo con más hogares llenos de amor.</p>
+<a class="btn" href="#juegos">¡Jugar ahora!</a>
+</section>
+
+<section id="juegos">
+<h2 class="section-title">🎮 Mini juegos</h2>
+<div class="cards">
+
+<div class="card">
+<h3>🍖 Alimenta al perrito</h3>
+<div class="game">
+<div class="pet" id="dog1">🐶</div>
+<p id="foodText">¡El perrito tiene hambre! Elige 3 alimentos saludables.</p>
+<div>
+<button class="food" onclick="feed()">🥩</button>
+<button class="food" onclick="feed()">🥕</button>
+<button class="food" onclick="feed()">🍗</button>
+</div>
+<div class="progress"><div class="bar" id="foodBar"></div></div>
+<div class="message" id="foodMsg">💚 ¡Lo lograste! Ahora dona al Fondo Huellitas para que puedan ayudar a más animales a encontrar un hogar. 🐾</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🛁 Baña a la mascota</h3>
+<div class="game">
+<div class="bath"><div class="pet" id="dog2">🐕‍🦺</div></div>
+<p id="bathText">¡Está sucia! Usa el jabón 5 veces para dejarla limpia.</p>
+<div>
+<button class="soap" onclick="wash()">🧼</button>
+<button class="soap" onclick="wash()">🫧</button>
+<button class="soap" onclick="wash()">🚿</button>
+</div>
+<div class="progress"><div class="bar" id="bathBar"></div></div>
+<div class="message" id="bathMsg">✨ ¡Mascota limpia y feliz! Dona al Fondo Huellitas para que puedan ayudar a más animales a encontrar un hogar. 🐾</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="mision">
+<h2 class="section-title">🐾 ¿Por qué ayudar?</h2>
+<div class="card" style="max-width:850px;margin:auto">
+<p style="font-size:19px;line-height:1.6">Cada gesto de cuidado puede convertirse en una oportunidad. El objetivo de este espacio es enseñar, de forma divertida, la importancia de la tenencia responsable, el cuidado y la adopción de animales que buscan una familia.</p>
+</div>
+</section>
+
+<section class="donate" id="donar">
+<h2>💚 Fondo Huellitas</h2>
+<p style="font-size:20px;max-width:650px;margin:0 auto 25px">Tu aporte puede ayudar a que más animales reciban cuidado y tengan la oportunidad de encontrar un hogar.</p>
+<a class="btn" href="#donar">DONAR AL FONDO HUELLITAS</a>
+<p class="small">Botón demostrativo: conecta aquí tu plataforma de donaciones cuando tengas los datos oficiales.</p>
+</section>
+</main>
+
+<footer>🐾 Animal Protect · Cuidar también es amar.</footer>
+
+<script>
+let fed=0, washed=0;
+function feed(){
+ if(fed>=3)return;
+ fed++; document.getElementById('foodBar').style.width=(fed/3*100)+'%';
+ document.getElementById('dog1').textContent=fed===3?'🐕':'🐶';
+ if(fed===3){document.getElementById('foodText').textContent='¡Barriguita feliz!';document.getElementById('foodMsg').style.display='block';}
+}
+function wash(){
+ if(washed>=5)return;
+ washed++; document.getElementById('bathBar').style.width=(washed/5*100)+'%';
+ document.getElementById('dog2').textContent=washed===5?'🐩':'🐕‍🦺';
+ if(washed===5){document.getElementById('bathText').textContent='¡Quedó limpita y feliz!';document.getElementById('bathMsg').style.display='block';}
+}
+</script>
+</body>
+</html>
